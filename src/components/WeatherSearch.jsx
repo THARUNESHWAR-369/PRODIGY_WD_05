@@ -23,7 +23,7 @@ function WeatherSearch() {
                 <p>Humidity: <strong>${weatherItem.main.humidity}%</strong></p>
         </div>
         <div class="weather-image">
-        <img src="httpss://openweathermap.org/img/wn/${
+        <img src="https://openweathermap.org/img/wn/${
           weatherItem.weather[0].icon
         }@4x.png" alt="1"> 
            <span>${weatherItem.weather[0].description}</span>
@@ -33,7 +33,7 @@ function WeatherSearch() {
       return ` <li class="weather-card">
                 <h4>(${weatherItem.dt_txt.split(" ")[0]})</h4>
                 <div class="weather-card-img">
-                    <img src="httpss://openweathermap.org/img/wn/${
+                    <img src="https://openweathermap.org/img/wn/${
                       weatherItem.weather[0].icon
                     }@2x.png" alt="1">
                 </div>
@@ -90,7 +90,7 @@ function WeatherSearch() {
     const cityName = locationInput.value.trim();
     console.log(cityName);
     if (!cityName) return;
-    const GEOCODING_API_URL = `httpss://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=${API_KEY}`;
+    const GEOCODING_API_URL = `https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=${API_KEY}`;
 
     axios
       .get(GEOCODING_API_URL)
