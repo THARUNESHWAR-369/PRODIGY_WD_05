@@ -2,6 +2,8 @@
 
 ## Task - 5 Weather App
 
+> ## Live Demo: https://weather-app-theta-fawn.vercel.app
+
 A simple weather application that fetches weather data from the OpenWeather API based on user input or current location. It displays current weather conditions, temperature, wind speed, and humidity, along with a 5-day forecast.
 
 ![Weather App Screenshot](screenshots/screenshot.png)
