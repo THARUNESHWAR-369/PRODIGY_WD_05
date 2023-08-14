@@ -6,11 +6,6 @@ function WeatherSearch() {
 
   const API_KEY = process.env.REACT_APP_API_KEY;
 
-  const locationInput = document.getElementById("location-input");
-
-  const weatherCards = document.querySelector(".weather-cards");
-  const currentWeatherCard = document.querySelector(".weather-search-content");
-
   const createWeatherCard = (cityName, weatherItem, index) => {
     if (index === 0) {
       return `
@@ -56,28 +51,49 @@ function WeatherSearch() {
         const uniqueForecastDays = [];
         const fiveDaysForecast = data.list.filter((forecast) => {
           const forecastDate = new Date(forecast.dt_txt).getDate();
+          // console.log(forecastDate);
           if (!uniqueForecastDays.includes(forecastDate)) {
             uniqueForecastDays.push(forecastDate);
             return true;
           }
+          // console.log(uniqueForecastDays);
           return false;
         });
-        locationInput.value = "";
-        weatherCards.innerHTML = "";
-        currentWeatherCard.innerHTML = "";
+
+        const weatherCards = document.getElementById("weather-cards");
+        const currentWeatherCard = document.getElementById(
+          "weather-search-content"
+        );
+
+        setLocation("");
+        try {
+          weatherCards.innerHTML = "";
+          currentWeatherCard.innerHTML = "";
+        } catch (e) {
+          console.log("e: ", e);
+        }
+        //console.log("fiveDaysForecast: ", fiveDaysForecast);
         fiveDaysForecast.forEach((weatherItem, index) => {
           if (index === 0) {
-            console.log(createWeatherCard(cityName, weatherItem, index));
+            // console.log(createWeatherCard(cityName, weatherItem, index));
 
-            currentWeatherCard.insertAdjacentHTML(
-              "beforeend",
-              createWeatherCard(cityName, weatherItem, index)
-            );
+            try {
+              currentWeatherCard.insertAdjacentHTML(
+                "beforeend",
+                createWeatherCard(cityName, weatherItem, index)
+              );
+            } catch (e) {
+              console.log("currentWeatherCard: error(): ", e);
+            }
           } else {
-            weatherCards.insertAdjacentHTML(
-              "beforeend",
-              createWeatherCard(cityName, weatherItem, index)
-            );
+            try {
+              weatherCards.insertAdjacentHTML(
+                "beforeend",
+                createWeatherCard(cityName, weatherItem, index)
+              );
+            } catch (e) {
+              console.log("weatherCards: error(): ", e);
+            }
           }
         });
       })
@@ -87,7 +103,7 @@ function WeatherSearch() {
   };
 
   const getCityCoordinates = () => {
-    const cityName = locationInput.value.trim();
+    const cityName = location;
     console.log(cityName);
     if (!cityName) return;
     const GEOCODING_API_URL = `https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=${API_KEY}`;
@@ -141,7 +157,7 @@ function WeatherSearch() {
 
   const searchByUserLocation = (e) => {
     getUserCoordinates();
-  }
+  };
 
   return (
     <div className="input-container">

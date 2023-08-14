@@ -9,11 +9,11 @@ function WeatherCards() {
     <div className="weather-container">
       <div className="weather-content">
         <div className="weather-search-container">
-          <div className="weather-search-content">
-            <WeatherLongCard/>
+          <div className="weather-search-content" id="weather-search-content">
+            <WeatherLongCard />
           </div>
         </div>
-        <WeatherCard/>
+        <WeatherCard />
       </div>
     </div>
   );
