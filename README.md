@@ -64,5 +64,4 @@ While building this weather application, I encountered several challenges, inclu
 ## Credits
 - OpenWeather API
 - Fonts: Open Sans
-=======
-# PRODIGY_WD_05
+
