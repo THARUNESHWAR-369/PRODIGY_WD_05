@@ -1,6 +1,6 @@
 # PRODIGY_WD_05 (Weather App)
 
-# Task - 5 Weather App
+## Task - 5 Weather App
 
 A simple weather application that fetches weather data from the OpenWeather API based on user input or current location. It displays current weather conditions, temperature, wind speed, and humidity, along with a 5-day forecast.
 
@@ -27,16 +27,23 @@ A simple weather application that fetches weather data from the OpenWeather API 
    ```sh
    git clone https://github.com/your-username/weather-app.git
    ```
+
 2. Navigate to the project directory:
-   ```
+
+   ```sh
    cd weather-app
    ```
+
 3. Install the dependencies
-   ```
+
+   ```sh
    npm install
    ```
+
 4. Replace the ```API_KEY``` in the ```WeatherSearch.j```s file with your OpenWeatherMap API key.
-5.  Start the development server: ```npm run start```
+
+5. Start the development server: ```npm run start```
+
 6. The app will open in your default browser at ```http://localhost:3000```.
 
 ## Usage
@@ -56,12 +63,12 @@ While building this weather application, I encountered several challenges, inclu
 - Implementing **error handling** for API requests and user inputs.
 
 ## Future Improvements
+
 - Add more weather information, such as weather icons, sunrise/sunset times, and precipitation.
 - Implement a more interactive user interface with animations and transitions.
 - Improve error handling and user feedback.
 
-
 ## Credits
+
 - OpenWeather API
 - Fonts: Open Sans
-
