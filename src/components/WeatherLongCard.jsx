@@ -4,7 +4,7 @@ import React from 'react'
 
 function WeatherLongCard() {
   return (
-    <div className="weather-details">
+    <div className="weather-details" id="weather-details">
       <h1>__________ (______)</h1>
       <p>
         Temperature: <strong>___°C</strong>

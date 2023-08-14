@@ -6,7 +6,7 @@ function WeatherCard(props) {
   return (
     <div className="weather-cards-container">
       <h3>5-Day Forecast</h3>
-      <ul className="weather-cards">
+      <ul className="weather-cards" id="weather-cards">
         <li className="weather-card">
           <h4>( _______)</h4>
           <p>
